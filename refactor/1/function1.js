@@ -7,13 +7,9 @@ let saveWebPage = (url, filename, callback) => {
         fs.writeFile(filename, html, (err) => {
             if (err) { return console.log(err.message) }
             console.log('It worked');
+            callback();
         });
     });
 }
-
-saveWebPage('http://google.com', 'write.html', (err) => {
-    if (err) { return console.log(err.message) }
-    console.log('It worked.');
-});
 
 module.exports = { saveWebPage };
